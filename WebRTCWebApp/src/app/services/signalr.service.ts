@@ -22,7 +22,7 @@ export class SignalrService {
 
     const builder = new HubConnectionBuilder();
     if (!withToken) {
-      builder.withUrl(url);
+      builder.withUrl(url, { withCredentials: false });
     } else {
       builder.withUrl(url, {
         accessTokenFactory: () => {
