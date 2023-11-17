@@ -25,6 +25,7 @@ export class SignalrService {
       builder.withUrl(url, { withCredentials: false });
     } else {
       builder.withUrl(url, {
+        withCredentials: true,
         accessTokenFactory: () => {
           return sessionStorage.getItem('token');
         }
